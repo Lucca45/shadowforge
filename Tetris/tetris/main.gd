@@ -84,6 +84,8 @@ func _ready() -> void:
 func start_new_game() -> void:
 	current_tetromino_type = choose_tetromino()
 	piece_atlas = Vector2i(all_tetrominoes.find(current_tetromino_type), 0)
+	next_tetromino_type = choose_tetromino()
+	next_piece_atlas = Vector2i(all_tetrominoes.find(next_tetromino_type), 0)
 	initialize_tetromino()
 	
 func _physics_process(delta: float) -> void:
@@ -99,8 +101,8 @@ func _physics_process(delta: float) -> void:
 	if movement_direction!=Vector2i.ZERO:
 		movement_tetromino(movement_direction)
 		
-	#if Input.is_action_just_pressed("ui_up"):
-	#	retate_tetromino()
+	if Input.is_action_just_pressed("ui_up"):
+		rotate_tetromino()
 		
 	var current_fall_interval=fall_interval
 	if Input.is_action_just_pressed("ui_down"):
@@ -128,6 +130,7 @@ func initialize_tetromino() -> void:
 	current_position=START_POSITION
 	active_tetromino=current_tetromino_type[rotation_index]
 	render_tetromino(active_tetromino, current_position, piece_atlas)
+	render_tetromino(next_tetromino_type[0], Vector2i(15, 2), next_piece_atlas)
 	
 @warning_ignore("shadowed_variable_base_class")
 func render_tetromino(tetromino: Array, position: Vector2i, atlas: Vector2i) -> void:
@@ -138,16 +141,74 @@ func render_tetromino(tetromino: Array, position: Vector2i, atlas: Vector2i) -> 
 func clear_tetromino() -> void:
 	for block in active_tetromino:
 		active.erase_cell(current_position+block)
+
+func check_rows() ->void:
+	var row: int=ROWS
+	while row>0:
+		var cells_filled: int=0
+		for i in range(COLS):
+			if not is_within_bounds(Vector2i(i+1, row)):
+				cells_filled+=1
+		if cells_filled==COLS:
+			shift_rows(row)
+		else:
+			row-=1
+
+func shift_rows(row) ->void:
+	var atlas: Vector2i
+	for i in range(row, 1, -1):
+		for j in range(COLS):
+			atlas=board.get_cell_atlas_coords(Vector2i(j+1, i-1))
+			if atlas==Vector2i(-1, -1):
+				board.erase_cell(Vector2i(j+1, i))
+			else:
+				board.set_cell(Vector2i(j+1, i), title_id, atlas)
+
+func rotate_tetromino() -> void:
+	if is_valid_rotation():
+		clear_tetromino()
+		rotation_index=(rotation_index-1)%4
+		active_tetromino=current_tetromino_type[rotation_index]
+		render_tetromino(active_tetromino, current_position, piece_atlas)
 		
 func movement_tetromino(direction: Vector2i) -> void:
 	if is_valid_move(direction):
 		clear_tetromino()
 		current_position+=direction
 		render_tetromino(active_tetromino, current_position, piece_atlas)
+	else:
+		if direction ==Vector2i.DOWN:
+			land_tetromno()
+			check_rows()
+			current_tetromino_type=next_tetromino_type
+			piece_atlas=next_piece_atlas
+			next_tetromino_type=choose_tetromino()
+			next_piece_atlas=Vector2i(all_tetrominoes.find(next_tetromino_type), 0)
+			clear_next_tetromino_preview()
+			initialize_tetromino()
+			
+func land_tetromno() ->void:
+	for i in active_tetromino:
+		active.erase_cell(current_position+i)
+		board.set_cell(current_position+i, title_id, piece_atlas)
 		
+func clear_next_tetromino_preview() ->void:
+	for i in range(14, 19):
+		for j in range(2, 6):
+			active.erase_cell(Vector2i(i, j))
+
 func is_valid_move(new_position: Vector2i) -> bool:
 	for block in active_tetromino:
 		if not is_within_bounds(current_position+block+new_position):
+			return false
+	return true
+
+func is_valid_rotation() -> bool:
+	var next_rotation=(rotation_index+1)%4
+	var rotated_teromino=current_tetromino_type[next_rotation]
+	
+	for block in rotated_teromino:
+		if not is_within_bounds(current_position+block):
 			return false
 	return true
 
