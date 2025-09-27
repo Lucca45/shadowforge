@@ -13,6 +13,14 @@ config_version=5
 config/name="New Game Project"
 run/main_scene="uid://enkj55bnayyp"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+
+[display]
+
+window/size/viewport_width=500
+window/size/viewport_height=620
 
 [input]
 

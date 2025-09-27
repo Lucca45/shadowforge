@@ -74,14 +74,27 @@ var title_id: int=0
 var piece_atlas: Vector2i
 var next_piece_atlas: Vector2i
 
+var score: int
+const CLEAR_REWARD: int=150
+
+var is_game_running: bool
+
 @onready var active: TileMapLayer = $Active
 @onready var board: TileMapLayer = $Board
 
 
 func _ready() -> void:
 	start_new_game()
+	$GameHUD/StartButton.pressed.connect(start_new_game)
 	
 func start_new_game() -> void:
+	score=0
+	$GameHUD/ScoreLabel.text="Score: "+str(score)
+	$GameHUD/GameOverLabel.visible=false
+	is_game_running=true
+	clear_tetromino()
+	clear_board()
+	clear_next_tetromino_preview()
 	current_tetromino_type = choose_tetromino()
 	piece_atlas = Vector2i(all_tetrominoes.find(current_tetromino_type), 0)
 	next_tetromino_type = choose_tetromino()
@@ -89,29 +102,30 @@ func start_new_game() -> void:
 	initialize_tetromino()
 	
 func _physics_process(delta: float) -> void:
-	var movement_direction=Vector2i.ZERO
-	
-	if Input.is_action_just_pressed("ui_left"):
-		movement_direction=Vector2i.LEFT
-	elif Input.is_action_just_pressed("ui_right"):
-		movement_direction=Vector2i.RIGHT
-	elif Input.is_action_just_pressed("ui_down"):
-		movement_direction=Vector2i.DOWN
+	if is_game_running:
+		var movement_direction=Vector2i.ZERO
 		
-	if movement_direction!=Vector2i.ZERO:
-		movement_tetromino(movement_direction)
-		
-	if Input.is_action_just_pressed("ui_up"):
-		rotate_tetromino()
-		
-	var current_fall_interval=fall_interval
-	if Input.is_action_just_pressed("ui_down"):
-		current_fall_interval/=fast_fall_multiplier
-		
-	fall_timer+=delta 
-	if fall_timer>=current_fall_interval:
-		movement_tetromino(Vector2i.DOWN)
-		fall_timer=0
+		if Input.is_action_just_pressed("ui_left"):
+			movement_direction=Vector2i.LEFT
+		elif Input.is_action_just_pressed("ui_right"):
+			movement_direction=Vector2i.RIGHT
+		elif Input.is_action_just_pressed("ui_down"):
+			movement_direction=Vector2i.DOWN
+			
+		if movement_direction!=Vector2i.ZERO:
+			movement_tetromino(movement_direction)
+			
+		if Input.is_action_just_pressed("ui_up"):
+			rotate_tetromino()
+			
+		var current_fall_interval=fall_interval
+		if Input.is_action_just_pressed("ui_down"):
+			current_fall_interval/=fast_fall_multiplier
+			
+		fall_timer+=delta 
+		if fall_timer>=current_fall_interval:
+			movement_tetromino(Vector2i.DOWN)
+			fall_timer=0
 		
 		
 	
@@ -130,7 +144,7 @@ func initialize_tetromino() -> void:
 	current_position=START_POSITION
 	active_tetromino=current_tetromino_type[rotation_index]
 	render_tetromino(active_tetromino, current_position, piece_atlas)
-	render_tetromino(next_tetromino_type[0], Vector2i(15, 2), next_piece_atlas)
+	render_tetromino(next_tetromino_type[0], Vector2i(13, 2), next_piece_atlas)
 	
 @warning_ignore("shadowed_variable_base_class")
 func render_tetromino(tetromino: Array, position: Vector2i, atlas: Vector2i) -> void:
@@ -151,6 +165,8 @@ func check_rows() ->void:
 				cells_filled+=1
 		if cells_filled==COLS:
 			shift_rows(row)
+			score+=CLEAR_REWARD
+			$GameHUD/ScoreLabel.text="Score: "+str(score)
 		else:
 			row-=1
 
@@ -163,6 +179,11 @@ func shift_rows(row) ->void:
 				board.erase_cell(Vector2i(j+1, i))
 			else:
 				board.set_cell(Vector2i(j+1, i), title_id, atlas)
+
+func clear_board() ->void:
+	for i in range(ROWS):
+		for j in range(COLS):
+			board.erase_cell(Vector2i(j+1, i+1))
 
 func rotate_tetromino() -> void:
 	if is_valid_rotation():
@@ -186,6 +207,7 @@ func movement_tetromino(direction: Vector2i) -> void:
 			next_piece_atlas=Vector2i(all_tetrominoes.find(next_tetromino_type), 0)
 			clear_next_tetromino_preview()
 			initialize_tetromino()
+			is_game_over()
 			
 func land_tetromno() ->void:
 	for i in active_tetromino:
@@ -193,8 +215,8 @@ func land_tetromno() ->void:
 		board.set_cell(current_position+i, title_id, piece_atlas)
 		
 func clear_next_tetromino_preview() ->void:
-	for i in range(14, 19):
-		for j in range(2, 6):
+	for i in range(13, 18):
+		for j in range(1, 10):
 			active.erase_cell(Vector2i(i, j))
 
 func is_valid_move(new_position: Vector2i) -> bool:
@@ -220,3 +242,9 @@ func is_within_bounds(pos: Vector2i) -> bool:
 	var title_id=board.get_cell_source_id(pos)
 	return title_id==-1
 		
+func is_game_over() ->void:
+	for i in active_tetromino:
+		if not is_within_bounds(i+current_position):
+			land_tetromno()
+			$GameHUD/GameOverLabel.visible=true
+			is_game_running=false
