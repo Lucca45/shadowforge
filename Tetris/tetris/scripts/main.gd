@@ -123,11 +123,10 @@ func _physics_process(delta: float) -> void:
 			current_fall_interval/=fast_fall_multiplier
 			
 		fall_timer+=delta 
+				
 		if fall_timer>=current_fall_interval:
 			movement_tetromino(Vector2i.DOWN)
 			fall_timer=0
-		
-		
 	
 func choose_tetromino() -> Array:
 	var selected_tetromino: Array

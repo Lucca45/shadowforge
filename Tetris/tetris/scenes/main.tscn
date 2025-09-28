@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://enkj55bnayyp"]
 
-[ext_resource type="Script" uid="uid://xj80mg0m5w84" path="res://main.gd" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://b6deqtigvr01j" path="res://game_hud.tscn" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://xj80mg0m5w84" path="res://scripts/main.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://b6deqtigvr01j" path="res://scenes/game_hud.tscn" id="2_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://cqsn7dmrroru7" path="res://assets/tetrominoes.png" id="2_sugp2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jyhfs"]
@@ -20,7 +20,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(28, 28)
 sources/0 = SubResource("TileSetAtlasSource_jyhfs")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wfyh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sugp2"]
 texture = ExtResource("2_sugp2")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -36,7 +36,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_0wfyh"]
 tile_size = Vector2i(28, 28)
-sources/0 = SubResource("TileSetAtlasSource_0wfyh")
+sources/0 = SubResource("TileSetAtlasSource_sugp2")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0wfyh")
