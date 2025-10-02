@@ -101,6 +101,10 @@ func start_new_game() -> void:
 	next_piece_atlas = Vector2i(all_tetrominoes.find(next_tetromino_type), 0)
 	initialize_tetromino()
 	
+func update_fall_speed() -> void:
+	fall_interval = max(0.1, 1.0 - float(score)/ 10000.0)
+	print(fall_interval)
+	
 func _physics_process(delta: float) -> void:
 	if is_game_running:
 		var movement_direction=Vector2i.ZERO
@@ -166,6 +170,7 @@ func check_rows() ->void:
 			shift_rows(row)
 			score+=CLEAR_REWARD
 			$GameHUD/ScoreLabel.text="Score: "+str(score)
+			update_fall_speed()
 		else:
 			row-=1
 
