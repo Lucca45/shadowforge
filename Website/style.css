@@ -28,7 +28,34 @@ li {
 }
 
 .basic-games {
-    padding: 20px;
     display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
     flex-direction: row;
-}
+  }
+  
+  .game {
+    position: relative;
+    width: 300px; 
+  }
+  
+  .game img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+  }
+  
+  .titel-spel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8)
+  }
+  
