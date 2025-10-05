@@ -4,15 +4,15 @@ body {
 
 h1 {
     font-size: 40px;
-    color: #fff;
+    color: #1F78A4;
 
     text-shadow:
-    0 0 5px #fff,
+    0 0 5px #1F78A4,
     0 0 10px #1F78A4,
     0 0 20px #1F78A4,
     0 0 30px #1F78A4,
-    0 0 50px #1F78A4,
-    0 0 70px #1F78A4,
-    0 0 80px #1F78A4,
-    0 0 120px #1F78A4;
+    0 0 50px #fff,
+    0 0 70px #fff,
+    0 0 80px #fff,
+    0 0 120px #fff;
 }
