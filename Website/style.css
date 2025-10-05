@@ -1,5 +1,6 @@
 body {
     background: #D3FDFF;
+    margin: 0;
 }
 
 h1 {
@@ -60,4 +61,38 @@ li {
     text-align: center;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
   }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
   
+  .navigation {
+    display: flex;
+    justify-content: flex-end; 
+    padding: 10px 20px;
+  }
+
+  .menubalk {
+    margin-top: -100px; 
+  }
+  
+  .menubalk ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menubalk li {
+    display: inline-block;
+  }
+  
+  .menubalk a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 8px 16px;
+    transition: 0.3s;
+  }
+
