@@ -96,3 +96,6 @@ li {
     transition: 0.3s;
   }
 
+.menubalk a:hover {
+    color: #1F78A4;
+}
