@@ -1,5 +1,5 @@
 body {
-    background: #D3FDFF;
+    background: #DEEBF7;
     margin: 0;
 }
 
@@ -16,6 +16,12 @@ h1 {
     0 0 70px #fff,
     0 0 80px #fff,
     0 0 120px #fff;
+}
+
+#hoofdsectie {
+    background-color: #C6DBEF;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    margin: 10px;
 }
 
 ul{
