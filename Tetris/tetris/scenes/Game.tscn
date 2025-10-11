@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=4 uid="uid://vpoxc50o6di1"]
+
+[ext_resource type="PackedScene" uid="uid://enkj55bnayyp" path="res://scenes/main.tscn" id="1_ibkli"]
+[ext_resource type="Texture2D" uid="uid://cqsn7dmrroru7" path="res://assets/tetrominoes.png" id="1_qbsmt"]
+
+[sub_resource type="Shader" id="Shader_qbsmt"]
+code = "shader_type canvas_item;
+
+uniform float threshold : hint_range(0.0, 2.0) = 1.0;
+uniform float intensity : hint_range(0.0, 5.0) = 1.5;
+uniform float blur_size : hint_range(0.0, 10.0) = 4.0;
+
+void fragment() {
+    vec2 pixel_size = 10.0 / TEXTURE_PIXEL_SIZE;
+    vec4 color = texture(TEXTURE, UV);
+
+    // Extract bright parts
+    vec4 bloom = vec4(0.0);
+    vec4 src = texture(TEXTURE, UV);
+    if (max(max(src.r, src.g), src.b) > threshold) {
+        // Blur bright areas
+        for (int x = -1; x <= 1; x++) {
+            for (int y = -1; y <= 1; y++) {
+                vec2 offset = vec2(float(x), float(y)) * blur_size * pixel_size;
+                bloom += texture(TEXTURE, UV + offset);
+            }
+        }
+        bloom /= 9.0;
+    }
+
+    // Mix original + bloom
+    COLOR = color + bloom * intensity;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_78awf"]
+shader = SubResource("Shader_qbsmt")
+shader_parameter/threshold = 1.0
+shader_parameter/intensity = 1.5
+shader_parameter/blur_size = 4.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cpr0p"]
+texture = ExtResource("1_qbsmt")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/next_alternative_id = 3
+8:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_78awf"]
+tile_size = Vector2i(28, 28)
+sources/0 = SubResource("TileSetAtlasSource_cpr0p")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_78awf")
+offset_right = 499.0
+offset_bottom = 617.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(499, 617)
+render_target_update_mode = 4
+
+[node name="Active" type="TileMapLayer" parent="SubViewportContainer/SubViewport"]
+tile_map_data = PackedByteArray("AAAAABUAAAAHAAAAAAABABUAAAAHAAAAAAACABUAAAAHAAAAAAADABUAAAAHAAAAAAAEABUAAAAHAAAAAAAFABUAAAAHAAAAAAAGABUAAAAHAAAAAAAHABUAAAAHAAAAAAAIABUAAAAHAAAAAAAJABUAAAAHAAAAAAAKABUAAAAHAAAAAAALABUAAAAHAAAAAAAAAAAAAAAHAAAAAAAAAAEAAAAHAAAAAAAAAAIAAAAHAAAAAAAAAAMAAAAHAAAAAAAAAAQAAAAHAAAAAAAAAAUAAAAHAAAAAAAAAAYAAAAHAAAAAAAAAAcAAAAHAAAAAAAAAAgAAAAHAAAAAAAAAAkAAAAHAAAAAAAAAAoAAAAHAAAAAAAAAAsAAAAHAAAAAAAAAAwAAAAHAAAAAAAAAA0AAAAHAAAAAAAAAA4AAAAHAAAAAAAAAA8AAAAHAAAAAAAAABAAAAAHAAAAAAAAABEAAAAHAAAAAAAAABIAAAAHAAAAAAAAABMAAAAHAAAAAAAAABQAAAAHAAAAAAABAAAAAAAHAAAAAAACAAAAAAAHAAAAAAADAAAAAAAHAAAAAAAEAAAAAAAHAAAAAAAFAAAAAAAHAAAAAAAGAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAIAAAAAAAHAAAAAAAJAAAAAAAHAAAAAAAKAAAAAAAHAAAAAAALAAAAAAAHAAAAAAALAAEAAAAHAAAAAAALAAIAAAAHAAAAAAALAAMAAAAHAAAAAAALAAQAAAAHAAAAAAALAAUAAAAHAAAAAAALAAYAAAAHAAAAAAALAAcAAAAHAAAAAAALAAgAAAAHAAAAAAALAAkAAAAHAAAAAAALAAoAAAAHAAAAAAALAAsAAAAHAAAAAAALAAwAAAAHAAAAAAALAA0AAAAHAAAAAAALAA4AAAAHAAAAAAALAA8AAAAHAAAAAAALABAAAAAHAAAAAAALABEAAAAHAAAAAAALABIAAAAHAAAAAAALABMAAAAHAAAAAAALABQAAAAHAAAAAAA=")
+tile_set = SubResource("TileSet_78awf")
+
+[node name="Node2D" parent="." instance=ExtResource("1_ibkli")]
