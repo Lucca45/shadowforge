@@ -1,0 +1,13 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1759689075
+icon.svg::CompressedTexture2D::8670346189138426562::1759684944::1759684949::1::::<><><>0<>0<>c9c848243f9407bd092632ccc3b969f4<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+snakesegment.tscn::PackedScene::5059429416072997479::1759686494::0::1::::<><><>0<>0<><>::
+::res://assets/::1759689075
+apple.png::CompressedTexture2D::7831287915436826641::1759688001::1759689073::1::::<><><>0<>0<>4736e0f1823030a7950619182a093776<>res://.godot/imported/apple.png-d0c5a0e024efc439723035186c67a74a.ctex::
+bg.png::CompressedTexture2D::7603033503698295549::1759685235::1759689075::1::::<><><>0<>0<>abb8ab0bc3249b0a45db49c4b3f23ebf<>res://.godot/imported/bg.png-23a59c2e9cba2223a50fa3fe41b70b25.ctex::
+::res://scenes/::1759689075
+game_over_menu.gd::GDScript::1110685051187549110::1759689044::0::1::::<>CanvasLayer<><>0<>0<><>::
+game_over_menu.tscn::PackedScene::6305569017682746884::1759688888::0::1::::<><><>0<>0<><>::
+hud.tscn::PackedScene::4316870010113313250::1759687877::0::1::::<><><>0<>0<><>::
+main.gd::GDScript::3841896779293284293::1759687877::0::1::::<>Node<><>0<>0<><>::
+main.tscn::PackedScene::5226091370915161826::1759689084::0::1::::<><><>0<>0<><>::uid://bu0bqjky8bkw0::::res://scenes/main.gd<>uid://cec3cfft24htn::::res://snakesegment.tscn<>uid://dgk7360i8ucs8::::res://assets/bg.png<>uid://b2rehootvkyww::::res://scenes/hud.tscn<>uid://djtsfx8jsfgcn::::res://assets/apple.png<>uid://cv3p2hlrvmv6c::::res://scenes/game_over_menu.tscn
