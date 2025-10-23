@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7euw736g3q5w"]
+
+[ext_resource type="Texture2D" uid="uid://uybxgbl8pl68" path="res://achtergronf.PNG" id="1_wtcfe"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.631373, 0.517647, 0.376471, 1)
+
+[node name="Achtergronf" type="Sprite2D" parent="."]
+position = Vector2(575, 323.75)
+scale = Vector2(0.576, 0.507457)
+texture = ExtResource("1_wtcfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="Achtergronf"]
+scale = Vector2(0.5, 0.5)
