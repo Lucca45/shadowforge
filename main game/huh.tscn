@@ -47,7 +47,8 @@ position = Vector2(111, 94)
 shape = SubResource("RectangleShape2D_anbts")
 
 [node name="Sprite2D" type="Sprite2D" parent="vloer/CollisionShape2D"]
-scale = Vector2(0.95, 0.1)
+position = Vector2(-13.321388, 0.99999994)
+scale = Vector2(0.9982039, 0.1)
 texture = ExtResource("2_wlepe")
 
 [node name="speler" type="CharacterBody2D" parent="."]
