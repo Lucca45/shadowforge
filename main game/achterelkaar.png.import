@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs6boft616kod"
-path="res://.godot/imported/horror.png-51375b894e39b9d14e726eacf91994f0.ctex"
+uid="uid://de2ox357o8ck8"
+path="res://.godot/imported/achterelkaar.png-87dc533768b8100c0b7bb76598bf73ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://horror.png"
-dest_files=["res://.godot/imported/horror.png-51375b894e39b9d14e726eacf91994f0.ctex"]
+source_file="res://achterelkaar.png"
+dest_files=["res://.godot/imported/achterelkaar.png-87dc533768b8100c0b7bb76598bf73ce.ctex"]
 
 [params]
 
