@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c333hhte4qe5h"]
+[gd_scene load_steps=20 format=3 uid="uid://c333hhte4qe5h"]
 
 [ext_resource type="Texture2D" uid="uid://dxqwpju5i62tc" path="res://achtergronf.PNG" id="1_8i27l"]
 [ext_resource type="Texture2D" uid="uid://qd8pk6e1vvsi" path="res://platformen/platform.JPG" id="2_wlepe"]
@@ -6,13 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://bio1nsovh1uu2" path="res://lopend1.png" id="4_j7akc"]
 [ext_resource type="Texture2D" uid="uid://bo0bpg2u2ffs8" path="res://lopend2.png" id="5_anbts"]
 [ext_resource type="Texture2D" uid="uid://bja2vb8p43yfi" path="res://normaal1.png" id="6_wcr7i"]
+[ext_resource type="Script" uid="uid://dbjmunxwa5vlh" path="res://gem_1.gd" id="7_q1iaj"]
+[ext_resource type="Texture2D" uid="uid://dsrkkdxyak0hq" path="res://gemb.png" id="8_sjl0t"]
+[ext_resource type="Script" uid="uid://dqc6msrwkxfmg" path="res://gem_2.gd" id="9_g28xo"]
+[ext_resource type="Script" uid="uid://eg4kofbi8u73" path="res://deur.gd" id="10_f4607"]
+[ext_resource type="Texture2D" uid="uid://dmj0vj8phatl4" path="res://deur_dicht.png" id="11_oukxo"]
+[ext_resource type="Texture2D" uid="uid://drg1f1fkukpmo" path="res://deur_open.png" id="12_44ukc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anbts"]
-size = Vector2(466.5, 46)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wcr7i"]
-radius = 14.0
-height = 52.0
+size = Vector2(472.02942, 46)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n4qcn"]
 animations = [{
@@ -27,6 +29,24 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wcr7i"]
+radius = 14.0
+height = 52.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_frpy7"]
+radius = 28.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbdbk"]
+size = Vector2(68, 92)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q1iaj"]
+a = Vector2(5, -259)
+b = Vector2(-1, 81)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sjl0t"]
+a = Vector2(-8, -220)
+b = Vector2(-4, 63)
 
 [node name="Node2D" type="Node2D"]
 
@@ -55,11 +75,11 @@ scale = Vector2(0.95, 0.1)
 texture = ExtResource("2_wlepe")
 
 [node name="vloer" type="StaticBody2D" parent="."]
-position = Vector2(257, 212)
+position = Vector2(263, 198)
 scale = Vector2(2.191276, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vloer"]
-position = Vector2(111, 94)
+position = Vector2(108.23529, 94)
 shape = SubResource("RectangleShape2D_anbts")
 
 [node name="Sprite2D" type="Sprite2D" parent="vloer/CollisionShape2D"]
@@ -67,21 +87,81 @@ position = Vector2(-13.321388, 0.99999994)
 scale = Vector2(0.9982039, 0.1)
 texture = ExtResource("2_wlepe")
 
-[node name="speler" type="CharacterBody2D" parent="."]
+[node name="speler" type="CharacterBody2D" parent="." groups=["player"]]
 script = ExtResource("3_lfatg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="speler"]
+visible = false
+position = Vector2(58.000004, 40.499996)
+scale = Vector2(0.13899612, 0.16239315)
+sprite_frames = SubResource("SpriteFrames_n4qcn")
+frame_progress = 0.780494
+
+[node name="Sprite2D" type="Sprite2D" parent="speler"]
+position = Vector2(58.000004, 42.000004)
+scale = Vector2(0.13380283, 0.16246496)
+texture = ExtResource("6_wcr7i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="speler"]
 position = Vector2(59, 41)
 shape = SubResource("CapsuleShape2D_wcr7i")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="speler/CollisionShape2D"]
-visible = false
-position = Vector2(-0.9999974, -0.50000215)
-scale = Vector2(0.13899612, 0.16239315)
-sprite_frames = SubResource("SpriteFrames_n4qcn")
-frame_progress = 0.780494
+[node name="Gem1" type="Area2D" parent="."]
+position = Vector2(96, 246)
+collision_layer = 2
+script = ExtResource("7_q1iaj")
 
-[node name="Sprite2D" type="Sprite2D" parent="speler/CollisionShape2D"]
-position = Vector2(-0.99999714, 1.0000035)
-scale = Vector2(0.13380283, 0.16246496)
-texture = ExtResource("6_wcr7i")
+[node name="Sprite2D" type="Sprite2D" parent="Gem1"]
+position = Vector2(1, 9)
+scale = Vector2(0.049072273, 0.049804684)
+texture = ExtResource("8_sjl0t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gem1"]
+shape = SubResource("CircleShape2D_frpy7")
+
+[node name="Gem2" type="Area2D" parent="."]
+position = Vector2(723, 83)
+collision_layer = 2
+script = ExtResource("9_g28xo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Gem2"]
+position = Vector2(1, 9)
+scale = Vector2(0.049072273, 0.049804684)
+texture = ExtResource("8_sjl0t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gem2"]
+shape = SubResource("CircleShape2D_frpy7")
+
+[node name="Deur" type="Area2D" parent="."]
+position = Vector2(670, 216)
+script = ExtResource("10_f4607")
+metadata/_edit_group_ = true
+
+[node name="Dicht" type="Sprite2D" parent="Deur"]
+position = Vector2(21.999979, 86.56249)
+scale = Vector2(0.12939452, 0.18511963)
+texture = ExtResource("11_oukxo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Deur"]
+position = Vector2(23, 87)
+scale = Vector2(0.12963869, 0.18640137)
+texture = ExtResource("12_44ukc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deur"]
+position = Vector2(1, 9)
+shape = SubResource("RectangleShape2D_wbdbk")
+
+[node name="BoundryL" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundryL"]
+position = Vector2(-11, 210)
+shape = SubResource("SegmentShape2D_q1iaj")
+
+[node name="BoundryR" type="StaticBody2D" parent="."]
+position = Vector2(823, 9)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundryR"]
+position = Vector2(-11, 210)
+shape = SubResource("SegmentShape2D_sjl0t")

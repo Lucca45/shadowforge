@@ -1,11 +1,14 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761416078
+::res://::1761418934
 achterelkaar.png::CompressedTexture2D::6368753324485895632::1761416040::1761416040::1::::<><><>0<>0<>69dc3c00c1ae395fc8e5f45d309f7c73<>res://.godot/imported/achterelkaar.png-87dc533768b8100c0b7bb76598bf73ce.ctex::
 achtergronf.PNG::CompressedTexture2D/CompressedTexture2D::8807998564549683372::1761329867::1761329867::1::::<><><>0<>0<>ddb3d23d4dd81f1eb0266920560eec87<>res://.godot/imported/achtergronf.PNG-365b2bb4e1834a0fa610964db702ff4b.ctex::
 backgroundlevel.tscn::PackedScene::2539213780300313681::1761416040::0::1::::<><><>0<>0<><>::uid://dxqwpju5i62tc::::res://achtergronf.PNG<>uid://der5xwabwki6r::::res://platformen/platform2.tscn<>uid://0m3mvub033ui::::res://platformen/platform.tscn
-characters.tscn::PackedScene::7733373239539484535::1761329867::0::1::::<><><>0<>0<><>::
-character_body_2d.gd::GDScript::6333040750465599823::1761372276::0::1::::<>CharacterBody2D<><>0<>0<><>::
-huh.tscn::PackedScene::6797644539955442723::1761416040::0::1::::<><><>0<>0<><>::uid://dxqwpju5i62tc::::res://achtergronf.PNG<>uid://qd8pk6e1vvsi::::res://platformen/platform.JPG<>uid://cwh1ix2s2knil::::res://character_body_2d.gd<>uid://c8m8dr7typwe1::::res://icon.svg
+characters.tscn::PackedScene::6909308562573936643::1761417635::0::1::::<><><>0<>0<><>::
+character_body_2d.gd::GDScript::6333040750465599823::1761417635::0::1::::<>CharacterBody2D<><>0<>0<><>::
+deur_dicht.png::CompressedTexture2D::8021663525392999279::1761418877::1761418943::1::::<><><>0<>0<>4da37b63e3ec4e6b6a39e552caf9e738<>res://.godot/imported/deur_dicht.png-70c207277e89291f555b73140c40f179.ctex::
+deur_open.png::CompressedTexture2D::8366447604044282482::1761418925::1761418942::1::::<><><>0<>0<>403750d0f9f9036899e85c15851d4c68<>res://.godot/imported/deur_open.png-56e15f522c88e32eb4371dd75cae2a00.ctex::
+gemb.png::CompressedTexture2D::8458380880441040242::1761418578::1761418677::1::::<><><>0<>0<>50d5cfbe28cbcdab6559658086e7e62a<>res://.godot/imported/gemb.png-2a603b7d863a0b1fdda97c43323b0a7e.ctex::
+huh.tscn::PackedScene::6797644539955442723::1761417667::0::1::::<><><>0<>0<><>::uid://dxqwpju5i62tc::::res://achtergronf.PNG<>uid://qd8pk6e1vvsi::::res://platformen/platform.JPG<>uid://cwh1ix2s2knil::::res://character_body_2d.gd<>uid://bio1nsovh1uu2::::res://lopend1.png<>uid://bo0bpg2u2ffs8::::res://lopend2.png<>uid://bja2vb8p43yfi::::res://normaal1.png
 icon.svg::CompressedTexture2D/CompressedTexture2D::7115855701859650130::1761329867::1761329867::1::::<><><>0<>0<>945b90a7f0efa171b817f23047fe55a2<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 lopend1.png::CompressedTexture2D::2978435546498997107::1761416040::1761416040::1::::<><><>0<>0<>67fa1ff67de09d00777142e007c5fe0e<>res://.godot/imported/lopend1.png-dfc11ef980c5e23a7098ffbb864a6f58.ctex::
 lopend2.png::CompressedTexture2D::3420761800173201329::1761416040::1761416040::1::::<><><>0<>0<>5084706fc3e04ca5b0989b46a5b02e00<>res://.godot/imported/lopend2.png-bda66a7897e2a88d003f99921eb191d4.ctex::
@@ -13,7 +16,7 @@ lopend3.png::CompressedTexture2D::3877544448158138242::1761416040::1761416040::1
 node_2d.tscn::PackedScene::7028397227560078962::1761371708::0::1::::<><><>0<>0<><>::uid://dxqwpju5i62tc::::res://achtergronf.PNG<>uid://qd8pk6e1vvsi::::res://platformen/platform.JPG
 normaal1.png::CompressedTexture2D::3019797241135399266::1761416040::1761416040::1::::<><><>0<>0<>f803529ded27b96b760fe0da82f327dc<>res://.godot/imported/normaal1.png-337e72295dc170c6033f2daafc5a4294.ctex::
 platform1.tscn::PackedScene::3416902324724661805::1761329867::0::1::::<><><>0<>0<><>::
-walking.tscn::PackedScene::8079277447149097492::1761416040::0::1::::<><><>0<>0<><>::uid://cwh1ix2s2knil::::res://character_body_2d.gd<>uid://bio1nsovh1uu2::::res://lopend1.png<>uid://bo0bpg2u2ffs8::::res://lopend2.png<>uid://cw0co35yreunw::::res://achterelkaar.png
+walking.tscn::PackedScene::8079277447149097492::1761417635::0::1::::<><><>0<>0<><>::uid://cwh1ix2s2knil::::res://character_body_2d.gd<>uid://bio1nsovh1uu2::::res://lopend1.png<>uid://bo0bpg2u2ffs8::::res://lopend2.png<>uid://bvikucw1k1k6m::::res://lopend3.png
 ::res://platformen/::1761329867
 platform2.tscn::PackedScene::7476975586082196767::1761329867::0::1::::<><><>0<>0<><>::uid://qd8pk6e1vvsi::::res://platformen/platform.JPG
 platform.JPG::CompressedTexture2D/CompressedTexture2D::1131245652480339272::1761329867::1761329867::1::::<><><>0<>0<>92d19f684588d1fc3d70e63a0411f570<>res://.godot/imported/platform.JPG-4fbd060146dafbf193ee4a919b7d43fc.ctex::

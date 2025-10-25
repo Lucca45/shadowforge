@@ -3,8 +3,10 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-@onready var anim_sprite = $CollisionShape2D/AnimatedSprite2D
-@onready var static_sprite = $CollisionShape2D/Sprite2D
+@onready var anim_sprite = $AnimatedSprite2D
+@onready var static_sprite = $Sprite2D
+var gems_collected = 0
+var total_gems = 2
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -29,5 +31,8 @@ func _physics_process(delta: float) -> void:
 		anim_sprite.visible = false
 		static_sprite.visible = true
 		
-
 	move_and_slide()
+	
+func collect_gem():
+	gems_collected += 1
+	print("Gems collected: ", gems_collected)
