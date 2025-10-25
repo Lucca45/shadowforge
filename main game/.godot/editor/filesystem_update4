@@ -1,1 +1,7 @@
+res://node_2d.tscn
+res://platformen/platform2.tscn
+res://platformen/platform.tscn
+res://characters.tscn
 res://huh.tscn
+res://backgroundlevel.tscn
+res://walking.tscn

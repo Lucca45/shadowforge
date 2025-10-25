@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dxqwpju5i62tc" path="res://achtergronf.PNG" id="1_8i27l"]
 [ext_resource type="Texture2D" uid="uid://qd8pk6e1vvsi" path="res://platformen/platform.JPG" id="2_wlepe"]
 [ext_resource type="Script" uid="uid://cwh1ix2s2knil" path="res://character_body_2d.gd" id="3_lfatg"]
-[ext_resource type="Texture2D" uid="uid://c8m8dr7typwe1" path="res://icon.svg" id="4_j7akc"]
+[ext_resource type="Texture2D" uid="uid://bja2vb8p43yfi" path="res://normaal1.png" id="4_wlepe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anbts"]
 size = Vector2(466.5, 46)
@@ -15,8 +15,8 @@ height = 52.0
 [node name="Node2D" type="Node2D"]
 
 [node name="achtergrond" type="Sprite2D" parent="."]
-position = Vector2(470.00003, 89)
-scale = Vector2(0.55999726, 0.3600006)
+position = Vector2(470, 89)
+scale = Vector2(0.559997, 0.360001)
 texture = ExtResource("1_8i27l")
 
 [node name="platformen" type="StaticBody2D" parent="."]
@@ -40,15 +40,15 @@ texture = ExtResource("2_wlepe")
 
 [node name="vloer" type="StaticBody2D" parent="."]
 position = Vector2(257, 212)
-scale = Vector2(2.191276, 1)
+scale = Vector2(2.19128, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vloer"]
 position = Vector2(111, 94)
 shape = SubResource("RectangleShape2D_anbts")
 
 [node name="Sprite2D" type="Sprite2D" parent="vloer/CollisionShape2D"]
-position = Vector2(-13.321388, 0.99999994)
-scale = Vector2(0.9982039, 0.1)
+position = Vector2(-13.3214, 1)
+scale = Vector2(0.998204, 0.1)
 texture = ExtResource("2_wlepe")
 
 [node name="speler" type="CharacterBody2D" parent="."]
@@ -59,6 +59,6 @@ position = Vector2(59, 41)
 shape = SubResource("CapsuleShape2D_wcr7i")
 
 [node name="Sprite2D2" type="Sprite2D" parent="speler/CollisionShape2D"]
-position = Vector2(-1, 0)
-scale = Vector2(0.27999997, 0.4400006)
-texture = ExtResource("4_j7akc")
+position = Vector2(0.12, -21.7701)
+scale = Vector2(0.287887, 0.31804)
+texture = ExtResource("4_wlepe")
