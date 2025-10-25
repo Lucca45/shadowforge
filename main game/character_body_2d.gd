@@ -3,7 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-
+@onready var anim_sprite = $CollisionShape2D/AnimatedSprite2D
+@onready var static_sprite = $CollisionShape2D/Sprite2D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -19,7 +20,14 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		anim_sprite.visible = true
+		static_sprite.visible = false
+		anim_sprite.flip_h = direction < 0
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		anim_sprite.visible = false
+		static_sprite.visible = true
+		
 
 	move_and_slide()
