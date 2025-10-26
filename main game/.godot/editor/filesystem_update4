@@ -1,6 +1,2 @@
-res://huh.tscn
-res://canvas_layer.gd
-res://character_body_2d.gd
-res://character_body_2d. 2.gd
 res://node_2d2.tscn
-res://game_over_menu.gd
+res://deur.gd
