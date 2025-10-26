@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://qyrmmhp86irh"]
+[gd_scene load_steps=28 format=3 uid="uid://qyrmmhp86irh"]
 
 [ext_resource type="Texture2D" uid="uid://dxqwpju5i62tc" path="res://achtergronf.PNG" id="1_l4a72"]
 [ext_resource type="Texture2D" uid="uid://qd8pk6e1vvsi" path="res://platformen/platform.JPG" id="2_8nlc7"]
@@ -8,10 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://bja2vb8p43yfi" path="res://normaal1.png" id="6_2xif8"]
 [ext_resource type="Script" uid="uid://b0rsimu5t5vs4" path="res://character_body_2d. 2.gd" id="7_xbms4"]
 [ext_resource type="Texture2D" uid="uid://c37hppqrefw6g" path="res://Image.png" id="8_x4kwx"]
+[ext_resource type="Texture2D" uid="uid://cxoquyvwidt4n" path="res://Image (1).png" id="9_l275l"]
 [ext_resource type="Script" path="res://gem_1.gd" id="9_qxspa"]
 [ext_resource type="Texture2D" uid="uid://dsrkkdxyak0hq" path="res://gemb.png" id="10_tuwup"]
 [ext_resource type="Script" path="res://gem_2.gd" id="11_xj3fc"]
-[ext_resource type="Script" path="res://deur.gd" id="12_ahcth"]
+[ext_resource type="Script" uid="uid://eg4kofbi8u73" path="res://deur.gd" id="12_ahcth"]
 [ext_resource type="Texture2D" uid="uid://dmj0vj8phatl4" path="res://deur_dicht.png" id="13_vysye"]
 [ext_resource type="Texture2D" uid="uid://drg1f1fkukpmo" path="res://deur_open.png" id="14_7q8ln"]
 [ext_resource type="Script" uid="uid://ctms3118dqjc" path="res://game_over_menu.gd" id="15_8nlc7"]
@@ -36,6 +37,20 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wcr7i"]
 radius = 14.0
 height = 52.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8nlc7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_x4kwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l275l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6w21v"]
 radius = 20.0
@@ -65,6 +80,7 @@ shadow_size = 5
 shadow_offset = Vector2(5, 5)
 
 [node name="MainScene" type="Node2D"]
+position = Vector2(1, 0)
 
 [node name="achtergrond" type="Sprite2D" parent="."]
 position = Vector2(470.00003, 89)
@@ -126,6 +142,14 @@ shape = SubResource("CapsuleShape2D_wcr7i")
 collision_layer = 2
 script = ExtResource("7_xbms4")
 metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="zombie"]
+visible = false
+position = Vector2(207, 241)
+scale = Vector2(0.04, 0.04)
+sprite_frames = SubResource("SpriteFrames_8nlc7")
+frame = 1
+frame_progress = 0.6038947
 
 [node name="Sprite2D" type="Sprite2D" parent="zombie"]
 position = Vector2(207, 241.00002)
