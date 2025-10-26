@@ -55,8 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let gap = 35;
 
     document.addEventListener('keydown', (e) => {
-        if(e.key === 'Enter') e.preventDefault();
-        if(e.key === 'ArrowUp') e.preventDefault();
+        if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Enter'].includes(e.key)) {
+            e.preventDefault();
+        }
 
         if(e.key === 'Enter' && game_state !== 'Play') {
             startGame();
