@@ -1,6 +1,8 @@
 body {
     background: #DEEBF7;
     margin: 0;
+    height: 100vh;
+
 }
 
 h1 {
@@ -22,6 +24,55 @@ h1 {
     background-color: #C6DBEF;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
     margin: 10px;
+}
+
+.search-balk {
+  position: absolute;
+  top: 45px;
+  right: 40px;
+  width: 50px;
+  transition: width 0.3s ease-in-out;
+}
+
+.search-balk input {
+  width: 100%;
+  padding: 10px 0px 10px 15px;
+  font-size :16px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.search-balk button {
+  position: absolute; 
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  background: lightblue;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.search-balk:hover {
+  width: 250px;
+}
+
+.search-balk:hover input {
+  opacity: 1;
+}
+
+.search-balk:hover button {
+  transform: translateY(-50%)
+  rotate(360deg);
 }
 
 ul{
