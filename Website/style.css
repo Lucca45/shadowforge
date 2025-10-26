@@ -210,9 +210,13 @@ li {
 
 .game-container-v2 {
   display: flex;
-  justify-content: center;  /* Horizontaal centreren */
-  align-items: center;      /* Verticaal centreren (optioneel) */
-  margin-top: 40px;         /* Ruimte tussen de bovenbalk en de game */
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  #snake{
+    transform: scale(0.8);
+    transform-origin: top center;
+  
 }
 
 .background {
