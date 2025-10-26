@@ -172,11 +172,10 @@ li {
 }
 
 .game-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; 
+  display: flex;
+  justify-content: center;  /* Horizontaal centreren */
+  align-items: center;      /* Verticaal centreren (optioneel) */
+  margin-top: 40px;         /* Ruimte tussen de bovenbalk en de game */
 }
 
 .background {
