@@ -105,19 +105,22 @@ li {
     height: auto;
     border-radius: 10px;
     display: block;
+    opacity: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .game img:hover{
-    opacity: 80%;
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   }
-  
+
   .titel-spel {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bold;
     text-align: center;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
