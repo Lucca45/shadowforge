@@ -3,9 +3,10 @@
 function gaNaarGame () { 
     const invoer = document.getElementById("search").value.toLowerCase().trim(); 
     const games = {
-        "snake": "snake/snake.html",
-        "tetris": "tetris/tetris.html",
+        "snake": "snake/snake_site.html",
+        "tetris": "tetris/tetris_site.html",
         "boter kaas en eieren": "boter/boterkaaseieren.html",
+        "flappybird": "flappybird/flappybird.html"
     };
     
     if (games[invoer]) {
