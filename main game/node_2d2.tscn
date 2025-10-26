@@ -1,0 +1,240 @@
+[gd_scene load_steps=26 format=3 uid="uid://qyrmmhp86irh"]
+
+[ext_resource type="Texture2D" uid="uid://dxqwpju5i62tc" path="res://achtergronf.PNG" id="1_l4a72"]
+[ext_resource type="Texture2D" uid="uid://qd8pk6e1vvsi" path="res://platformen/platform.JPG" id="2_8nlc7"]
+[ext_resource type="Script" uid="uid://cwh1ix2s2knil" path="res://character_body_2d.gd" id="3_l275l"]
+[ext_resource type="Texture2D" uid="uid://bio1nsovh1uu2" path="res://lopend1.png" id="4_xn2o6"]
+[ext_resource type="Texture2D" uid="uid://bo0bpg2u2ffs8" path="res://lopend2.png" id="5_qqen2"]
+[ext_resource type="Texture2D" uid="uid://bja2vb8p43yfi" path="res://normaal1.png" id="6_2xif8"]
+[ext_resource type="Script" uid="uid://b0rsimu5t5vs4" path="res://character_body_2d. 2.gd" id="7_xbms4"]
+[ext_resource type="Texture2D" uid="uid://c37hppqrefw6g" path="res://Image.png" id="8_x4kwx"]
+[ext_resource type="Script" path="res://gem_1.gd" id="9_qxspa"]
+[ext_resource type="Texture2D" uid="uid://dsrkkdxyak0hq" path="res://gemb.png" id="10_tuwup"]
+[ext_resource type="Script" path="res://gem_2.gd" id="11_xj3fc"]
+[ext_resource type="Script" path="res://deur.gd" id="12_ahcth"]
+[ext_resource type="Texture2D" uid="uid://dmj0vj8phatl4" path="res://deur_dicht.png" id="13_vysye"]
+[ext_resource type="Texture2D" uid="uid://drg1f1fkukpmo" path="res://deur_open.png" id="14_7q8ln"]
+[ext_resource type="Script" uid="uid://ctms3118dqjc" path="res://game_over_menu.gd" id="15_8nlc7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anbts"]
+size = Vector2(472.02942, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n4qcn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xn2o6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qqen2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wcr7i"]
+radius = 14.0
+height = 52.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6w21v"]
+radius = 20.0
+height = 84.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l4a72"]
+radius = 19.0
+height = 82.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_frpy7"]
+radius = 28.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbdbk"]
+size = Vector2(68, 92)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q1iaj"]
+a = Vector2(5, -259)
+b = Vector2(-1, 81)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_sjl0t"]
+a = Vector2(-8, -220)
+b = Vector2(-4, 63)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l275l"]
+bg_color = Color(0.19501162, 0.110262014, 0, 1)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[node name="MainScene" type="Node2D"]
+
+[node name="achtergrond" type="Sprite2D" parent="."]
+position = Vector2(470.00003, 89)
+scale = Vector2(0.55999726, 0.3600006)
+texture = ExtResource("1_l4a72")
+
+[node name="platformen" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platformen"]
+position = Vector2(111, 94)
+shape = SubResource("RectangleShape2D_anbts")
+
+[node name="Sprite2D" type="Sprite2D" parent="platformen/CollisionShape2D"]
+scale = Vector2(0.95, 0.1)
+texture = ExtResource("2_8nlc7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="platformen"]
+position = Vector2(800, 151)
+shape = SubResource("RectangleShape2D_anbts")
+
+[node name="Sprite2D" type="Sprite2D" parent="platformen/CollisionShape2D2"]
+position = Vector2(7, 0)
+scale = Vector2(0.95, 0.1)
+texture = ExtResource("2_8nlc7")
+
+[node name="vloer" type="StaticBody2D" parent="."]
+position = Vector2(263, 198)
+scale = Vector2(2.191276, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vloer"]
+position = Vector2(108.23529, 94)
+shape = SubResource("RectangleShape2D_anbts")
+
+[node name="Sprite2D" type="Sprite2D" parent="vloer/CollisionShape2D"]
+position = Vector2(-13.321388, 0.99999994)
+scale = Vector2(0.9982039, 0.1)
+texture = ExtResource("2_8nlc7")
+
+[node name="player" type="CharacterBody2D" parent="." groups=["player"]]
+script = ExtResource("3_l275l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+visible = false
+position = Vector2(58.000004, 40.499996)
+scale = Vector2(0.13899612, 0.16239315)
+sprite_frames = SubResource("SpriteFrames_n4qcn")
+frame_progress = 0.780494
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+position = Vector2(58.000004, 42.000004)
+scale = Vector2(0.13380283, 0.16246496)
+texture = ExtResource("6_2xif8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(59, 41)
+shape = SubResource("CapsuleShape2D_wcr7i")
+
+[node name="zombie" type="CharacterBody2D" parent="."]
+collision_layer = 2
+script = ExtResource("7_xbms4")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="zombie"]
+position = Vector2(207, 241.00002)
+scale = Vector2(0.049427073, 0.047080074)
+texture = ExtResource("8_x4kwx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zombie"]
+position = Vector2(209, 238)
+shape = SubResource("CapsuleShape2D_6w21v")
+
+[node name="Area2D" type="Area2D" parent="zombie"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zombie/Area2D"]
+position = Vector2(210, 238)
+shape = SubResource("CapsuleShape2D_l4a72")
+
+[node name="Gem1" type="Area2D" parent="."]
+position = Vector2(96, 246)
+collision_layer = 2
+script = ExtResource("9_qxspa")
+
+[node name="Sprite2D" type="Sprite2D" parent="Gem1"]
+position = Vector2(1, 9)
+scale = Vector2(0.049072273, 0.049804684)
+texture = ExtResource("10_tuwup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gem1"]
+shape = SubResource("CircleShape2D_frpy7")
+
+[node name="Gem2" type="Area2D" parent="."]
+position = Vector2(723, 83)
+collision_layer = 2
+script = ExtResource("11_xj3fc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Gem2"]
+position = Vector2(1, 9)
+scale = Vector2(0.049072273, 0.049804684)
+texture = ExtResource("10_tuwup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gem2"]
+shape = SubResource("CircleShape2D_frpy7")
+
+[node name="Deur" type="Area2D" parent="."]
+position = Vector2(670, 216)
+script = ExtResource("12_ahcth")
+metadata/_edit_group_ = true
+
+[node name="Dicht" type="Sprite2D" parent="Deur"]
+position = Vector2(21.999979, 86.56249)
+scale = Vector2(0.12939452, 0.18511963)
+texture = ExtResource("13_vysye")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Deur"]
+visible = false
+position = Vector2(23, 87)
+scale = Vector2(0.12963869, 0.18640137)
+texture = ExtResource("14_7q8ln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deur"]
+position = Vector2(1, 9)
+shape = SubResource("RectangleShape2D_wbdbk")
+
+[node name="BoundryL" type="StaticBody2D" parent="."]
+position = Vector2(9, 27)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundryL"]
+position = Vector2(-11, 210)
+shape = SubResource("SegmentShape2D_q1iaj")
+
+[node name="BoundryR" type="StaticBody2D" parent="."]
+position = Vector2(823, 9)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundryR"]
+position = Vector2(-11, 210)
+shape = SubResource("SegmentShape2D_sjl0t")
+
+[node name="GameOverMenu" type="CanvasLayer" parent="."]
+process_mode = 2
+script = ExtResource("15_8nlc7")
+
+[node name="GameOverPanel" type="Panel" parent="GameOverMenu"]
+offset_left = 232.0
+offset_top = 26.0
+offset_right = 632.0
+offset_bottom = 276.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ResultLabel" type="Label" parent="GameOverMenu"]
+offset_left = 344.0
+offset_top = 45.0
+offset_right = 644.0
+offset_bottom = 216.0
+theme_override_font_sizes/font_size = 40
+text = " You died 
+      💀
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RestartButton" type="Button" parent="GameOverMenu"]
+offset_left = 306.0
+offset_top = 166.0
+offset_right = 556.0
+offset_bottom = 229.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_l275l")
+text = "Play again"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="GameOverMenu/RestartButton" to="zombie" method="_on_restart_button_pressed"]

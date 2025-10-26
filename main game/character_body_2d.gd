@@ -36,3 +36,7 @@ func _physics_process(delta: float) -> void:
 func collect_gem():
 	gems_collected += 1
 	print("Gems collected: ", gems_collected)
+	
+func _on_body_entered(body: Node) -> void:
+	print("player touched by:", body)  
+	

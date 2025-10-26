@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" uid="uid://l7gdfdb8ufvc" path="res://canvas_layer.gd" id="1_cg8yi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kd8ku"]
+bg_color = Color(0.19501162, 0.110262014, 0, 1)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[node name="GameOverMenu" type="CanvasLayer"]
+script = ExtResource("1_cg8yi")
+
+[node name="GameOverPanel" type="Panel" parent="."]
+offset_left = 300.0
+offset_top = 400.0
+offset_right = 700.0
+offset_bottom = 650.0
+
+[node name="ResultLabel" type="Label" parent="."]
+offset_left = 418.0
+offset_top = 418.0
+offset_right = 718.0
+offset_bottom = 589.0
+theme_override_font_sizes/font_size = 40
+text = " You died 
+      💀
+"
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 375.0
+offset_top = 545.0
+offset_right = 625.0
+offset_bottom = 608.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_kd8ku")
+text = "Play again"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

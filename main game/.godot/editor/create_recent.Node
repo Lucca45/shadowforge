@@ -1,8 +1,13 @@
+Button
+Label
+Panel
+CanvasLayer
 CollisionShape2D
+Area2D
+PathFollow2D
+Sprite2D
+CharacterBody2D
 StaticBody2D
 Camera2D
-Sprite2D
-Area2D
 AnimatedSprite2D
-CharacterBody2D
 TileMapLayer
