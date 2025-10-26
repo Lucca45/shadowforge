@@ -213,10 +213,7 @@ li {
   justify-content: center;
   align-items: center;
   margin-top: 40px;
-  #snake{
-    transform: scale(0.3);
-    transform-origin: top center;
-  
+  overflow: hidden;
 }
 
 .background {
