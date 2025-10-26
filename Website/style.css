@@ -107,6 +107,10 @@ li {
     display: block;
   }
   
+  .game img:hover{
+    opacity: 80%;
+  }
+  
   .titel-spel {
     position: absolute;
     top: 50%;
