@@ -163,3 +163,102 @@ li {
 .menubalk a:hover {
     color: #1F78A4;
 }
+
+#game-sectie {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('flappybird/achtergrond.png') no-repeat center center;
+  background-size: cover;
+  z-index: 0;
+}
+
+.bird {
+  position: absolute;
+  z-index: 10;
+  height: 90px;
+  width: 120px;
+}
+
+.pipe_sprite {
+  height: 100px; 
+  width: 130px;
+  position: absolute;
+  z-index: 5;
+  height: 70vh; 
+  width: 6vw; 
+  background: radial-gradient(green 50%, lightgreen); 
+  border: 5px solid black;
+}
+
+.message {
+  position: absolute;
+  z-index: 20;
+  color: white;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.messageStyle {
+  background: lightblue;
+  padding: 30px;
+  font-size: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5%;
+}
+
+.score {
+  position: absolute;
+  z-index: 20;
+  height: 10vh;
+  font-size: 10vh;
+  font-weight: 100;
+  color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  top: 0;
+  left: 0;
+  margin: bold;
+}
+
+.score_val {
+  color: gold;
+  font-weight: bold;
+}
+
+@media only screen and (max-width : 1080px) {
+  .message {
+    font-size: 50px;
+    top: 50%;
+    white-space: nowrap;
+  }
+  .score {
+    font-size: 8vh;
+  }
+  .bird {
+    width: 120px;
+    height: 90px;
+  }
+  .pipe-sprite {
+    width: 14vw;
+  }
+}
