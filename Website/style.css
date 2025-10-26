@@ -201,8 +201,7 @@ li {
     pointer-events: none; 
   }
 
-  
-
+/* voor de flappybird game */
 #game-sectie {
   width: 100%;
   height: 100vh;
@@ -251,7 +250,7 @@ li {
   z-index: 5;
   height: 70vh; 
   width: 6vw; 
-  background: radial-gradient(green 50%, lightgreen); 
+  background: radial-gradient(green 50%, lightgreen);/* zorgt voor de kleur overgang bij de pipe */
   border: 5px solid black;
 }
 
@@ -292,6 +291,7 @@ li {
   font-weight: bold;
 }
 
+/* css code voor de flappybird game alleen toegepast bij schermen die max 1080px groot zijn */
 @media only screen and (max-width : 1080px) {
   .message {
     font-size: 50px;
