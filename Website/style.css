@@ -5,6 +5,7 @@ body {
 
 }
 
+/* logo */
 h1 {
     font-size: 40px;
     color: #1F78A4;
@@ -20,12 +21,52 @@ h1 {
     0 0 120px #fff;
 }
 
+/* de blauwe balk */
 #hoofdsectie {
     background-color: #C6DBEF;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
     margin: 10px;
 }
 
+.icon {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end; 
+  padding: 10px 20px;
+}
+
+.menubalk {
+  margin-top: -100px; 
+}
+
+.menubalk ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menubalk li {
+  display: inline-block;
+}
+
+.menubalk a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  padding: 8px 16px;
+  transition: 0.3s;
+}
+
+.menubalk a:hover {
+  color: #1F78A4;
+}
+
+/* searchbalk */
 .search-balk {
   position: absolute;
   top: 45px;
@@ -70,6 +111,7 @@ h1 {
   opacity: 1;
 }
 
+/* zorgt voor de special effect */
 .search-balk:hover button {
   transform: translateY(-50%)
   rotate(360deg);
@@ -85,6 +127,7 @@ li {
     margin-right: 40%;
 }
 
+/* layout van de kleinere games */
 .basic-games {
     display: flex;
     justify-content: center;
@@ -109,6 +152,7 @@ li {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
+  /* special effect als je muis op de game zit */
   .game img:hover{
     transform: scale(1.1) rotate(-2deg);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
@@ -126,6 +170,7 @@ li {
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
   }
 
+/* layout voor de main game */
   #spel4 {
     display: block;
     margin: 60px auto 40px auto;
@@ -137,6 +182,7 @@ li {
     display: block;
   }
   
+  /* zorgt voor special effect net zoals de kleinere games */
   #spel4:hover {
     transform: scale(1.1) rotate(-2deg);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
@@ -155,43 +201,7 @@ li {
     pointer-events: none; 
   }
 
-  .icon {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-  }
   
-  .navigation {
-    display: flex;
-    justify-content: flex-end; 
-    padding: 10px 20px;
-  }
-
-  .menubalk {
-    margin-top: -100px; 
-  }
-  
-  .menubalk ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .menubalk li {
-    display: inline-block;
-  }
-  
-  .menubalk a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    padding: 8px 16px;
-    transition: 0.3s;
-  }
-
-.menubalk a:hover {
-    color: #1F78A4;
-}
 
 #game-sectie {
   width: 100%;

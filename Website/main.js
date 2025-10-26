@@ -5,7 +5,7 @@ function gaNaarGame () {
     const games = {
         "snake": "snake/snake_site.html",
         "tetris": "tetris/tetris_site.html",
-        "boter kaas en eieren": "boter/boterkaaseieren.html",
+        "boter kaas en eieren": "boter/boterkaaseieren_site.html",
         "flappybird": "flappybird/flappybird.html"
     };
     
