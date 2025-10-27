@@ -9,9 +9,9 @@
 [ext_resource type="Script" uid="uid://b0rsimu5t5vs4" path="res://character_body_2d. 2.gd" id="7_xbms4"]
 [ext_resource type="Texture2D" uid="uid://c37hppqrefw6g" path="res://Image.png" id="8_x4kwx"]
 [ext_resource type="Texture2D" uid="uid://cxoquyvwidt4n" path="res://Image (1).png" id="9_l275l"]
-[ext_resource type="Script" path="res://gem_1.gd" id="9_qxspa"]
+[ext_resource type="Script" uid="uid://dbjmunxwa5vlh" path="res://gem_1.gd" id="9_qxspa"]
 [ext_resource type="Texture2D" uid="uid://dsrkkdxyak0hq" path="res://gemb.png" id="10_tuwup"]
-[ext_resource type="Script" path="res://gem_2.gd" id="11_xj3fc"]
+[ext_resource type="Script" uid="uid://dqc6msrwkxfmg" path="res://gem_2.gd" id="11_xj3fc"]
 [ext_resource type="Script" uid="uid://eg4kofbi8u73" path="res://deur.gd" id="12_ahcth"]
 [ext_resource type="Texture2D" uid="uid://dmj0vj8phatl4" path="res://deur_dicht.png" id="13_vysye"]
 [ext_resource type="Texture2D" uid="uid://drg1f1fkukpmo" path="res://deur_open.png" id="14_7q8ln"]
@@ -127,7 +127,7 @@ visible = false
 position = Vector2(58.000004, 40.499996)
 scale = Vector2(0.13899612, 0.16239315)
 sprite_frames = SubResource("SpriteFrames_n4qcn")
-frame_progress = 0.780494
+frame_progress = 0.02415645
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 position = Vector2(58.000004, 42.000004)
@@ -148,8 +148,7 @@ visible = false
 position = Vector2(207, 241)
 scale = Vector2(0.04, 0.04)
 sprite_frames = SubResource("SpriteFrames_8nlc7")
-frame = 1
-frame_progress = 0.6038947
+frame_progress = 0.8457969
 
 [node name="Sprite2D" type="Sprite2D" parent="zombie"]
 position = Vector2(207, 241.00002)
@@ -253,9 +252,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RestartButton" type="Button" parent="GameOverMenu"]
 offset_left = 306.0
-offset_top = 166.0
+offset_top = 165.0
 offset_right = 556.0
-offset_bottom = 229.0
+offset_bottom = 228.0
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_l275l")
 text = "Play again"

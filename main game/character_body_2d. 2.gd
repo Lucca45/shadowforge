@@ -13,7 +13,8 @@ func _ready():
 	start_position = global_position  
 	gameover.visible = false          
 	$Area2D.body_entered.connect(_on_body_entered)
-
+	get_tree().paused = false
+	
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		print("Zombie touched player!")
@@ -22,7 +23,6 @@ func _on_body_entered(body: Node) -> void:
 		get_tree().paused = true
 
 func _physics_process(delta):
-	# Beweeg zombie heen en weer
 	global_position.x += direction * speed * delta
 	
 	if global_position.x > start_position.x + right_limit:
