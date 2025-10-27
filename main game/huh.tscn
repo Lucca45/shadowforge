@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bio1nsovh1uu2" path="res://lopend1.png" id="4_j7akc"]
 [ext_resource type="Texture2D" uid="uid://bo0bpg2u2ffs8" path="res://lopend2.png" id="5_anbts"]
 [ext_resource type="Texture2D" uid="uid://bja2vb8p43yfi" path="res://normaal1.png" id="6_wcr7i"]
-[ext_resource type="Script" path="res://gem_1.gd" id="7_q1iaj"]
+[ext_resource type="Script" uid="uid://dbjmunxwa5vlh" path="res://gem_1.gd" id="7_q1iaj"]
 [ext_resource type="Texture2D" uid="uid://dsrkkdxyak0hq" path="res://gemb.png" id="8_sjl0t"]
-[ext_resource type="Script" path="res://gem_2.gd" id="9_g28xo"]
-[ext_resource type="Script" path="res://deur.gd" id="10_f4607"]
+[ext_resource type="Script" uid="uid://dqc6msrwkxfmg" path="res://gem_2.gd" id="9_g28xo"]
+[ext_resource type="Script" uid="uid://eg4kofbi8u73" path="res://deur.gd" id="10_f4607"]
 [ext_resource type="Texture2D" uid="uid://dmj0vj8phatl4" path="res://deur_dicht.png" id="11_oukxo"]
 [ext_resource type="Texture2D" uid="uid://drg1f1fkukpmo" path="res://deur_open.png" id="12_44ukc"]
 

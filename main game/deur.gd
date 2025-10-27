@@ -20,4 +20,4 @@ func _on_body_entered(body: Node) -> void:
 			print("Door locked. Collect more gems!")
 
 func change_scene():
-	get_tree().change_scene_to_file("res://walking.tscn")
+	get_tree().change_scene_to_file("res://node_2d2.tscn")
