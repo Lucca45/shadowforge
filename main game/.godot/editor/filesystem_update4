@@ -1,6 +1,10 @@
+<<<<<<< Updated upstream
 res://node_2d2.tscn
 res://deur.gd
 res://character_body_2d. 2.gd
 res://character_body_2d.gd
 res://gem_1.gd
 res://gem_2.gd
+=======
+res://node_2d3.tscn
+>>>>>>> Stashed changes
