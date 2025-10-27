@@ -1,3 +1,4 @@
+Sprite2D
 AnimatedSprite2D
 Button
 Label
@@ -6,7 +7,6 @@ CanvasLayer
 CollisionShape2D
 Area2D
 PathFollow2D
-Sprite2D
 CharacterBody2D
 StaticBody2D
 Camera2D

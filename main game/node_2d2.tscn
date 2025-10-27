@@ -20,7 +20,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anbts"]
 size = Vector2(472.02942, 46)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_n4qcn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_l275l"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -38,14 +38,14 @@ animations = [{
 radius = 14.0
 height = 52.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8nlc7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xn2o6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_x4kwx")
+"texture": ExtResource("9_l275l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_l275l")
+"texture": ExtResource("8_x4kwx")
 }],
 "loop": true,
 "name": &"default",
@@ -126,8 +126,7 @@ script = ExtResource("3_l275l")
 visible = false
 position = Vector2(58.000004, 40.499996)
 scale = Vector2(0.13899612, 0.16239315)
-sprite_frames = SubResource("SpriteFrames_n4qcn")
-frame_progress = 0.02415645
+sprite_frames = SubResource("SpriteFrames_l275l")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 position = Vector2(58.000004, 42.000004)
@@ -147,12 +146,11 @@ metadata/_edit_group_ = true
 visible = false
 position = Vector2(207, 241)
 scale = Vector2(0.04, 0.04)
-sprite_frames = SubResource("SpriteFrames_8nlc7")
-frame_progress = 0.8457969
+sprite_frames = SubResource("SpriteFrames_xn2o6")
 
 [node name="Sprite2D" type="Sprite2D" parent="zombie"]
-position = Vector2(207, 241.00002)
-scale = Vector2(0.049427073, 0.047080074)
+position = Vector2(207, 241)
+scale = Vector2(0.04, 0.04)
 texture = ExtResource("8_x4kwx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zombie"]
@@ -260,4 +258,20 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_l275l")
 text = "Play again"
 metadata/_edit_use_anchors_ = true
 
+[node name="Restartingknop" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("15_8nlc7")
+
+[node name="RestartButton2" type="Button" parent="Restartingknop"]
+offset_left = 703.0
+offset_top = -1.0
+offset_right = 803.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_l275l")
+text = "restart"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="GameOverMenu/RestartButton" to="zombie" method="_on_restart_button_pressed"]
+[connection signal="restart" from="Restartingknop" to="zombie" method="_on_restartingknop_restart"]
+[connection signal="pressed" from="Restartingknop/RestartButton2" to="Restartingknop" method="_on_restart_button_pressed"]

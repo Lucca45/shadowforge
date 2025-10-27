@@ -4,3 +4,5 @@ res://character_body_2d. 2.gd
 res://character_body_2d.gd
 res://gem_1.gd
 res://gem_2.gd
+res://game_over_menu.gd
+res://huh.tscn

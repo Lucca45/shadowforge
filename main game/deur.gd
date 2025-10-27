@@ -12,7 +12,6 @@ func _on_body_entered(body: Node) -> void:
 			locked_sprite.visible = false
 			open_sprite.visible = true
 			print("Door unlocked!")
-			# Use deferred call to safely change the scene
 			call_deferred("change_scene")
 		else:
 			locked_sprite.visible = true
