@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://7lhx0sptpfxq"]
+
+[ext_resource type="Script" uid="uid://oako7xpkynj5" path="res://well_done_menu.gd" id="1_b6emv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nv4pm"]
+bg_color = Color(0.19501162, 0.110262014, 0, 1)
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GameOverMenu" type="CanvasLayer" parent="."]
+process_mode = 2
+script = ExtResource("1_b6emv")
+
+[node name="GameOverPanel" type="Panel" parent="GameOverMenu"]
+offset_left = 232.0
+offset_top = 26.0
+offset_right = 632.0
+offset_bottom = 276.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ResultLabel" type="Label" parent="GameOverMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -103.0
+offset_right = 231.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Well done
+        🎇"
+
+[node name="RestartButton" type="Button" parent="GameOverMenu"]
+offset_left = 306.0
+offset_top = 165.0
+offset_right = 556.0
+offset_bottom = 228.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_nv4pm")
+text = "Play again"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="GameOverMenu/RestartButton" to="GameOverMenu" method="_on_restart_button_pressed"]

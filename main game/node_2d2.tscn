@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://qyrmmhp86irh"]
 
-[ext_resource type="Texture2D" uid="uid://dxqwpju5i62tc" path="res://achtergronf.PNG" id="1_l4a72"]
+[ext_resource type="Texture2D" uid="uid://diqslqldp5ss2" path="res://achtergronf2.PNG" id="1_l275l"]
 [ext_resource type="Texture2D" uid="uid://qd8pk6e1vvsi" path="res://platformen/platform.JPG" id="2_8nlc7"]
 [ext_resource type="Script" uid="uid://cwh1ix2s2knil" path="res://character_body_2d.gd" id="3_l275l"]
 [ext_resource type="Texture2D" uid="uid://bio1nsovh1uu2" path="res://lopend1.png" id="4_xn2o6"]
@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://dbjmunxwa5vlh" path="res://gem_1.gd" id="9_qxspa"]
 [ext_resource type="Texture2D" uid="uid://dsrkkdxyak0hq" path="res://gemb.png" id="10_tuwup"]
 [ext_resource type="Script" uid="uid://dqc6msrwkxfmg" path="res://gem_2.gd" id="11_xj3fc"]
-[ext_resource type="Script" uid="uid://eg4kofbi8u73" path="res://deur.gd" id="12_ahcth"]
+[ext_resource type="Script" uid="uid://5pu3ixv0i7di" path="res://deur2.gd" id="13_l275l"]
 [ext_resource type="Texture2D" uid="uid://dmj0vj8phatl4" path="res://deur_dicht.png" id="13_vysye"]
 [ext_resource type="Texture2D" uid="uid://drg1f1fkukpmo" path="res://deur_open.png" id="14_7q8ln"]
 [ext_resource type="Script" uid="uid://ctms3118dqjc" path="res://game_over_menu.gd" id="15_8nlc7"]
@@ -85,7 +85,7 @@ position = Vector2(1, 0)
 [node name="achtergrond" type="Sprite2D" parent="."]
 position = Vector2(470.00003, 89)
 scale = Vector2(0.55999726, 0.3600006)
-texture = ExtResource("1_l4a72")
+texture = ExtResource("1_l275l")
 
 [node name="platformen" type="StaticBody2D" parent="."]
 
@@ -192,7 +192,7 @@ shape = SubResource("CircleShape2D_frpy7")
 
 [node name="Deur" type="Area2D" parent="."]
 position = Vector2(670, 216)
-script = ExtResource("12_ahcth")
+script = ExtResource("13_l275l")
 metadata/_edit_group_ = true
 
 [node name="Dicht" type="Sprite2D" parent="Deur"]
