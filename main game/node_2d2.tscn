@@ -1,25 +1,21 @@
 [gd_scene load_steps=28 format=3 uid="uid://qyrmmhp86irh"]
 
-[ext_resource type="Texture2D" uid="uid://dxqwpju5i62tc" path="res://achtergronf.PNG" id="1_l4a72"]
-[ext_resource type="Texture2D" uid="uid://qd8pk6e1vvsi" path="res://platformen/platform.JPG" id="2_8nlc7"]
-[ext_resource type="Script" uid="uid://cwh1ix2s2knil" path="res://character_body_2d.gd" id="3_l275l"]
-[ext_resource type="Texture2D" uid="uid://bio1nsovh1uu2" path="res://lopend1.png" id="4_xn2o6"]
-[ext_resource type="Texture2D" uid="uid://bo0bpg2u2ffs8" path="res://lopend2.png" id="5_qqen2"]
-[ext_resource type="Texture2D" uid="uid://bja2vb8p43yfi" path="res://normaal1.png" id="6_2xif8"]
-[ext_resource type="Script" uid="uid://b0rsimu5t5vs4" path="res://character_body_2d. 2.gd" id="7_xbms4"]
-[ext_resource type="Texture2D" uid="uid://c37hppqrefw6g" path="res://Image.png" id="8_x4kwx"]
-[ext_resource type="Texture2D" uid="uid://cxoquyvwidt4n" path="res://Image (1).png" id="9_l275l"]
-[ext_resource type="Script" uid="uid://dbjmunxwa5vlh" path="res://gem_1.gd" id="9_qxspa"]
-[ext_resource type="Texture2D" uid="uid://dsrkkdxyak0hq" path="res://gemb.png" id="10_tuwup"]
-[ext_resource type="Script" uid="uid://dqc6msrwkxfmg" path="res://gem_2.gd" id="11_xj3fc"]
-<<<<<<< Updated upstream
-[ext_resource type="Script" uid="uid://eg4kofbi8u73" path="res://deur.gd" id="12_ahcth"]
-=======
-[ext_resource type="Script" uid="uid://cni6qxlcu41ni" path="res://deur2.gd" id="13_l275l"]
->>>>>>> Stashed changes
-[ext_resource type="Texture2D" uid="uid://dmj0vj8phatl4" path="res://deur_dicht.png" id="13_vysye"]
-[ext_resource type="Texture2D" uid="uid://drg1f1fkukpmo" path="res://deur_open.png" id="14_7q8ln"]
-[ext_resource type="Script" uid="uid://ctms3118dqjc" path="res://game_over_menu.gd" id="15_8nlc7"]
+[ext_resource type="Texture2D" uid="uid://dxqwpju5i62tc" path="res://achtergronf.PNG" id="1_l275l"]
+[ext_resource type="Texture2D" uid="uid://qd8pk6e1vvsi" path="res://platformen/platform.JPG" id="2_xn2o6"]
+[ext_resource type="Script" uid="uid://cwh1ix2s2knil" path="res://character_body_2d.gd" id="3_qqen2"]
+[ext_resource type="Texture2D" uid="uid://bio1nsovh1uu2" path="res://lopend1.png" id="4_2xif8"]
+[ext_resource type="Texture2D" uid="uid://bo0bpg2u2ffs8" path="res://lopend2.png" id="5_xbms4"]
+[ext_resource type="Texture2D" uid="uid://bja2vb8p43yfi" path="res://normaal1.png" id="6_x4kwx"]
+[ext_resource type="Script" uid="uid://b0rsimu5t5vs4" path="res://character_body_2d. 2.gd" id="7_qxspa"]
+[ext_resource type="Texture2D" uid="uid://c37hppqrefw6g" path="res://Image.png" id="8_tuwup"]
+[ext_resource type="Texture2D" uid="uid://cxoquyvwidt4n" path="res://Image (1).png" id="9_xj3fc"]
+[ext_resource type="Script" uid="uid://dbjmunxwa5vlh" path="res://gem_1.gd" id="10_ahcth"]
+[ext_resource type="Texture2D" uid="uid://dsrkkdxyak0hq" path="res://gemb.png" id="11_vysye"]
+[ext_resource type="Script" uid="uid://dqc6msrwkxfmg" path="res://gem_2.gd" id="12_7q8ln"]
+[ext_resource type="Script" uid="uid://crhku1hcm1crk" path="res://deur3.gd" id="13_6w21v"]
+[ext_resource type="Texture2D" uid="uid://dmj0vj8phatl4" path="res://deur_dicht.png" id="14_kw7kf"]
+[ext_resource type="Texture2D" uid="uid://drg1f1fkukpmo" path="res://deur_open.png" id="15_hni3o"]
+[ext_resource type="Script" uid="uid://ctms3118dqjc" path="res://game_over_menu.gd" id="16_cnfn6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anbts"]
 size = Vector2(472.02942, 46)
@@ -28,10 +24,10 @@ size = Vector2(472.02942, 46)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_xn2o6")
+"texture": ExtResource("4_2xif8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_qqen2")
+"texture": ExtResource("5_xbms4")
 }],
 "loop": true,
 "name": &"default",
@@ -46,10 +42,10 @@ height = 52.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_x4kwx")
+"texture": ExtResource("8_tuwup")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_l275l")
+"texture": ExtResource("9_xj3fc")
 }],
 "loop": true,
 "name": &"default",
@@ -89,7 +85,7 @@ position = Vector2(1, 0)
 [node name="achtergrond" type="Sprite2D" parent="."]
 position = Vector2(470.00003, 89)
 scale = Vector2(0.55999726, 0.3600006)
-texture = ExtResource("1_l4a72")
+texture = ExtResource("1_l275l")
 
 [node name="platformen" type="StaticBody2D" parent="."]
 
@@ -98,17 +94,19 @@ position = Vector2(111, 94)
 shape = SubResource("RectangleShape2D_anbts")
 
 [node name="Sprite2D" type="Sprite2D" parent="platformen/CollisionShape2D"]
+position = Vector2(7, 3)
 scale = Vector2(0.95, 0.1)
-texture = ExtResource("2_8nlc7")
+texture = ExtResource("2_xn2o6")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="platformen"]
-position = Vector2(800, 151)
+position = Vector2(728, 129)
 shape = SubResource("RectangleShape2D_anbts")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="platformen/CollisionShape2D2"]
 position = Vector2(7, 0)
 scale = Vector2(0.95, 0.1)
-texture = ExtResource("2_8nlc7")
+texture = ExtResource("2_xn2o6")
 
 [node name="vloer" type="StaticBody2D" parent="."]
 position = Vector2(263, 198)
@@ -121,96 +119,101 @@ shape = SubResource("RectangleShape2D_anbts")
 [node name="Sprite2D" type="Sprite2D" parent="vloer/CollisionShape2D"]
 position = Vector2(-13.321388, 0.99999994)
 scale = Vector2(0.9982039, 0.1)
-texture = ExtResource("2_8nlc7")
+texture = ExtResource("2_xn2o6")
 
 [node name="player" type="CharacterBody2D" parent="." groups=["player"]]
-script = ExtResource("3_l275l")
+script = ExtResource("3_qqen2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
 visible = false
 position = Vector2(58.000004, 40.499996)
 scale = Vector2(0.13899612, 0.16239315)
 sprite_frames = SubResource("SpriteFrames_n4qcn")
-frame_progress = 0.02415645
+frame_progress = 0.780494
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 position = Vector2(58.000004, 42.000004)
 scale = Vector2(0.13380283, 0.16246496)
-texture = ExtResource("6_2xif8")
+texture = ExtResource("6_x4kwx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(59, 41)
 shape = SubResource("CapsuleShape2D_wcr7i")
 
-[node name="zombie" type="CharacterBody2D" parent="."]
+[node name="zombie2" type="CharacterBody2D" parent="."]
+position = Vector2(-30, -15)
 collision_layer = 2
-script = ExtResource("7_xbms4")
+script = ExtResource("7_qxspa")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="zombie"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="zombie2"]
 visible = false
 position = Vector2(207, 241)
 scale = Vector2(0.04, 0.04)
 sprite_frames = SubResource("SpriteFrames_8nlc7")
-frame_progress = 0.8457969
+frame = 1
+frame_progress = 0.6038947
 
-[node name="Sprite2D" type="Sprite2D" parent="zombie"]
+[node name="Sprite2D" type="Sprite2D" parent="zombie2"]
 position = Vector2(207, 241.00002)
 scale = Vector2(0.049427073, 0.047080074)
-texture = ExtResource("8_x4kwx")
+texture = ExtResource("8_tuwup")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="zombie"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zombie2"]
 position = Vector2(209, 238)
 shape = SubResource("CapsuleShape2D_6w21v")
 
-[node name="Area2D" type="Area2D" parent="zombie"]
+[node name="Area2D" type="Area2D" parent="zombie2"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="zombie/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zombie2/Area2D"]
 position = Vector2(210, 238)
 shape = SubResource("CapsuleShape2D_l4a72")
 
 [node name="Gem1" type="Area2D" parent="."]
-position = Vector2(96, 246)
+position = Vector2(702, 68)
 collision_layer = 2
-script = ExtResource("9_qxspa")
+script = ExtResource("10_ahcth")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Gem1"]
 position = Vector2(1, 9)
 scale = Vector2(0.049072273, 0.049804684)
-texture = ExtResource("10_tuwup")
+texture = ExtResource("11_vysye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gem1"]
+position = Vector2(2, 1)
 shape = SubResource("CircleShape2D_frpy7")
 
 [node name="Gem2" type="Area2D" parent="."]
-position = Vector2(723, 83)
+position = Vector2(98, 216)
 collision_layer = 2
-script = ExtResource("11_xj3fc")
+script = ExtResource("12_7q8ln")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Gem2"]
 position = Vector2(1, 9)
 scale = Vector2(0.049072273, 0.049804684)
-texture = ExtResource("10_tuwup")
+texture = ExtResource("11_vysye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gem2"]
 shape = SubResource("CircleShape2D_frpy7")
 
 [node name="Deur" type="Area2D" parent="."]
-position = Vector2(670, 216)
-script = ExtResource("13_l275l")
+position = Vector2(735, 214)
+script = ExtResource("13_6w21v")
 metadata/_edit_group_ = true
 
 [node name="Dicht" type="Sprite2D" parent="Deur"]
 position = Vector2(21.999979, 86.56249)
 scale = Vector2(0.12939452, 0.18511963)
-texture = ExtResource("13_vysye")
+texture = ExtResource("14_kw7kf")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Deur"]
 visible = false
 position = Vector2(23, 87)
 scale = Vector2(0.12963869, 0.18640137)
-texture = ExtResource("14_7q8ln")
+texture = ExtResource("15_hni3o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deur"]
 position = Vector2(1, 9)
@@ -234,7 +237,8 @@ shape = SubResource("SegmentShape2D_sjl0t")
 
 [node name="GameOverMenu" type="CanvasLayer" parent="."]
 process_mode = 2
-script = ExtResource("15_8nlc7")
+visible = false
+script = ExtResource("16_cnfn6")
 
 [node name="GameOverPanel" type="Panel" parent="GameOverMenu"]
 offset_left = 232.0
@@ -256,12 +260,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RestartButton" type="Button" parent="GameOverMenu"]
 offset_left = 306.0
-offset_top = 165.0
+offset_top = 166.0
 offset_right = 556.0
-offset_bottom = 228.0
+offset_bottom = 229.0
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_l275l")
 text = "Play again"
 metadata/_edit_use_anchors_ = true
-
-[connection signal="pressed" from="GameOverMenu/RestartButton" to="zombie" method="_on_restart_button_pressed"]
